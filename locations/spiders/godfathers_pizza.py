@@ -11,7 +11,6 @@ class GodfathersPizzaSpider(scrapy.Spider):
     name = "godfathers_pizza"
     item_attributes = {"brand": "Godfather's Pizza", "brand_wikidata": "Q5576353"}
     start_urls = ["https://godfathers.orderexperience.net/_nuxt/aa3a1a2.js"]
-    requires_proxy = True
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
         key = re.search(r"apiKey:\s*\"(\w+)\"", response.text).group(1)
