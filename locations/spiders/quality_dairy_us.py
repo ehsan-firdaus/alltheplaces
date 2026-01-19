@@ -13,7 +13,6 @@ class QualityDairyUSSpider(scrapy.Spider):
     name = "quality_dairy_us"
     item_attributes = {"name": "Quality Dairy", "brand": "Quality Dairy", "brand_wikidata": "Q23461886"}
     start_urls = ["https://qualitydairy.com/v15/stores/"]
-    requires_proxy = True
 
     def parse(self, response, **kwargs):
         for location in json.loads(re.search("qd_locations = (.*);", response.text).group(1)):
