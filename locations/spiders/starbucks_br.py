@@ -11,7 +11,6 @@ class StarbucksBRSpider(scrapy.Spider):
     name = "starbucks_br"
     item_attributes = STARBUCKS_SHARED_ATTRIBUTES
     start_urls = ["https://starbucks.com.br/lojas"]
-    requires_proxy = True
 
     def parse(self, response, **kwargs):
         details = chompjs.parse_js_object(response.xpath('//script[contains(text(), "var placesList")]/text()').get())
