@@ -10,7 +10,6 @@ from locations.json_blob_spider import JSONBlobSpider
 
 class FoodstuffsNZSpider(JSONBlobSpider):
     name = "foodstuffs_nz"
-    requires_proxy = True
     start_urls = ["https://www.newworld.co.nz/", "https://www.paknsave.co.nz/"]
     BRANDS = {"newworld": ("New World", "Q7012488"), "paknsave": ("PAK'nSAVE", "Q7125339")}
 
