@@ -12,7 +12,6 @@ class CaseysGeneralStoreSpider(SitemapSpider, StructuredDataSpider):
     sitemap_rules = [(r"^https://www\.caseys\.com/general-store/[^/]+/[^/]+/(\d+)$", "parse")]
     wanted_types = ["Restaurant"]
     time_format = "%I:%M%p"
-    requires_proxy = True
 
     def pre_process_data(self, ld_data: dict, **kwargs):
         ld_data["name"] = ld_data["url"] = ld_data["@id"] = None
