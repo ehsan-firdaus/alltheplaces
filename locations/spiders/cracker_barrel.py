@@ -13,7 +13,6 @@ class CrackerBarrelSpider(SitemapSpider):
     allowed_domains = ["crackerbarrel.com"]
     sitemap_urls = ["https://www.crackerbarrel.com/sitemap.xml"]
     sitemap_rules = [(r"\/Locations\/States\/(\w{2})\/([-\w]+)\/(\d+)$", "parse_store")]
-    requires_proxy = True
 
     def sitemap_filter(self, entries):
         for entry in entries:
