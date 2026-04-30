@@ -18,7 +18,6 @@ class BigWAUSpider(Spider):
     # An alltheplaces user agent gets delayed in the hope of causing bots to time out
     # whereas a user agent having the appearance of a user is not delayed.
     custom_settings = {"USER_AGENT": BROWSER_DEFAULT}
-    requires_proxy = True
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
         data_raw = response.xpath('//script[@id="__NEXT_DATA__" and @type="application/json"]/text()').get()
