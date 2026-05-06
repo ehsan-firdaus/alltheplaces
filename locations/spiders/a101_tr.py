@@ -20,7 +20,7 @@ class A101TRSpider(Spider):
     requires_proxy = True
     custom_settings = {
         "CONCURRENT_REQUESTS": 1,
-        "DOWNLOAD_DELAY": 1,
+        "DOWNLOAD_DELAY": 2,
         "ROBOTSTXT_OBEY": False,
     }
 
