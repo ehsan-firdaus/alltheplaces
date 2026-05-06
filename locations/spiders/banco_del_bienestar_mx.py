@@ -17,6 +17,7 @@ class BancoDelBienestarMXSpider(Spider):
     }
     start_urls = ["https://directoriodesucursales.bancodelbienestar.gob.mx"]
     token = ""
+    requires_proxy = True
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
         self.token = response.xpath('//input[@name="__RequestVerificationToken"]/@value').get()
