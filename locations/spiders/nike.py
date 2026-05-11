@@ -11,7 +11,7 @@ from locations.hours import OpeningHours
 class NikeSpider(scrapy.Spider):
     name = "nike"
     item_attributes = {"brand": "Nike", "brand_wikidata": "Q483915", "extras": Categories.SHOP_CLOTHES.value}
-    start_urls = ["https://storeviews-cdn.risedomain-prod.nikecloud.com/store-locations-static.json"]
+    start_urls = ["https://nslp-directory.nike.com/store-locations-static.json"]
 
     def extract_image(self, item, store):
         placeholders = [
