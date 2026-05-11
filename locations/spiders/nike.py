@@ -39,13 +39,16 @@ class NikeSpider(Spider):
         all_stores = response.json()["stores"]
         for store in all_stores.values():
             item = DictParser.parse(store)
+            item["name"] = self.item_attributes["brand"]
             item["opening_hours"] = self.parse_opening_hours(DictParser.get_nested_key(store, "regularHours"))
 
             if re.match(r"^[A-Za-z0-9_-]+$", store["slug"]):
                 item["website"] = "https://www.nike.com/retail/s/" + store["slug"]
             else:
                 item["website"] = None
+
             self.extract_image(item, store)
+
             item["extras"] = {"owner:type": store["facilityType"]}
             if store["businessConcept"] == "FACTORY":
                 item["brand"] = "Nike Factory Store"
