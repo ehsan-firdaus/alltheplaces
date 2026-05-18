@@ -18,7 +18,6 @@ class JumboNLSpider(Spider):
         "ROBOTSTXT_OBEY": False,
         "USER_AGENT": BROWSER_DEFAULT,
     }
-    requires_proxy = True
 
     def make_request(self, page: int, size: int = 30) -> JsonRequest:
         return JsonRequest(
