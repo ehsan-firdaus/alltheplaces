@@ -12,11 +12,9 @@ from locations.items import Feature
 
 class FoodstuffsNZSpider(CrawlSpider):
     name = "foodstuffs_nz"
-    requires_proxy = True
     start_urls = ["https://www.newworld.co.nz/store-finder", "https://www.paknsave.co.nz/store-finder"]
     BRANDS = {"newworld": ("New World", "Q7012488"), "paknsave": ("PAK'nSAVE", "Q7125339")}
     rules = [Rule(LinkExtractor(restrict_xpaths='//*[@class="ds-grid ds-gap-12"]//ul'), "parse")]
-    requires_proxy = True
 
     def parse(self, response: Response) -> Iterable[Feature]:
         if data := response.xpath('//script[@id="__NEXT_DATA__" and @type="application/json"]/text()').get():
