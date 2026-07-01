@@ -8,4 +8,3 @@ class EverNewCASpider(ForeverNewAUNZSpider, PlaywrightSpider):
     start_urls = [
         "https://www.evernew.ca/locator/index/search/?address=vancouver&components[country]=CA&radius=10000000&type=all",
     ]
-    requires_proxy = True
