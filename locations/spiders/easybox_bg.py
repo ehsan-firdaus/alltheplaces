@@ -11,7 +11,6 @@ class EasyboxBGSpider(scrapy.Spider):
     allowed_domains = ["sameday.bg"]
     start_urls = ["https://sameday.bg/wp/wp-admin/admin-ajax.php?action=get_ooh_lockers_request&country=Bulgaria"]
     custom_settings = {"ROBOTSTXT_OBEY": False}
-    requires_proxy = "BG"
 
     def parse(self, response, **kwargs):
         for location in response.json()["data"]:
