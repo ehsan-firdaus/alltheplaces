@@ -37,7 +37,6 @@ class TescoGBSpider(SitemapSpider, StructuredDataSpider, PlaywrightSpider):
     item_attributes = TESCO
     sitemap_urls = ["https://www.tesco.com/store-locator/sitemap.xml"]
     custom_settings = DEFAULT_PLAYWRIGHT_SETTINGS | {"USER_AGENT": BROWSER_DEFAULT, "ROBOTSTXT_OBEY": False}
-    requires_proxy = True
     strip_names = [
         "Tesco Café",
         "Tesco Petrol Filling Station",
