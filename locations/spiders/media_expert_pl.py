@@ -17,7 +17,6 @@ class MediaExpertPLSpider(Spider):
         "USER_AGENT": BROWSER_DEFAULT,
     }
 
-    requires_proxy = True  # Cloudflare geoblocking in use
 
     item_attributes = {"brand": "Media Expert", "brand_wikidata": "Q11776794"}
 
