@@ -12,7 +12,6 @@ class SchuhGBSpider(SitemapSpider, StructuredDataSpider):
     sitemap_urls = ["https://www.schuh.co.uk/googleSitemap.aspx"]
     sitemap_rules = [(r"/stores/[^/]+/$", "parse")]
     wanted_types = ["ShoeStore"]
-    requires_proxy = True
     custom_settings = {"USER_AGENT": BROWSER_DEFAULT}
 
     def _get_sitemap_body(self, response):
