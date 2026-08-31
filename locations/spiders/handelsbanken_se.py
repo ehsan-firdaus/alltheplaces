@@ -13,7 +13,6 @@ class HandelsbankenSESpider(Spider):
     name = "handelsbanken_se"
     item_attributes = {"brand": "Handelsbanken", "brand_wikidata": "Q1421630"}
     start_urls = ["https://locator.maptoweb.dk/handelsbanken.com/locator/points/where/CountryCode/eqi/se"]
-    requires_proxy = True
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
         for store in response.json()["results"]:
