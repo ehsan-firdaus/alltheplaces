@@ -6,4 +6,3 @@ class LaserClinicsCASpider(LaserClinicsSpider):
     item_attributes = {**LASER_CLINICS_SHARED_ATTRIBUTES, "country": "CA"}
     allowed_domains = ["www.laserclinics.ca"]
     sitemap_urls = ["https://www.laserclinics.ca/sitemap.xml"]
-    requires_proxy = "CA"  # Vercel security checkpoint blocks datacentre IPs
