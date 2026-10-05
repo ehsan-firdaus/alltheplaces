@@ -12,7 +12,6 @@ class OzoneBGSpider(CrawlSpider, StructuredDataSpider):
     # challenge/fingerprint check locally (plain curl/Scrapy both work
     # unproxied) — an IP-reputation block, which requires_proxy fixes since
     # this is a plain (non-browser) spider.
-    requires_proxy = "BG"
     start_urls = ["https://www.ozone.bg/our-shops/"]
     rules = [
         Rule(
