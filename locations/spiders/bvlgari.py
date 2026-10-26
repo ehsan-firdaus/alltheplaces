@@ -18,7 +18,6 @@ class BvlgariSpider(SitemapSpider, StructuredDataSpider):
     sitemap_follow = ["/sitemap-pages-en-gb"]
     sitemap_rules = [(r"/en-gb/storelocator/country-region/[^/]+/[^/]+/[^/]+/[^/]+$", "parse")]
     wanted_types = ["JewelryStore"]
-    requires_proxy = True
     custom_settings = {"USER_AGENT": BROWSER_DEFAULT}
 
     def parse(self, response: Response, **kwargs: Any) -> Any:
