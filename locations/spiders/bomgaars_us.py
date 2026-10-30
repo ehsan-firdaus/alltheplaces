@@ -66,7 +66,6 @@ class BomgaarsUSSpider(JSONBlobSpider):
     name = "bomgaars_us"
     item_attributes = {"brand": "Bomgaars", "brand_wikidata": "Q22059070", "name": "Bomgaars"}
     allowed_domains = ["www.bomgaars.com"]
-    requires_proxy = "US"  # Imperva
     custom_settings = {"ROBOTSTXT_OBEY": False}
 
     async def start(self) -> AsyncIterator[JsonRequest]:
