@@ -35,7 +35,6 @@ class YvesRocherSpider(Spider):
             "www.yves-rocher.ch",
         ]
     ]
-    requires_proxy = True
     # Zyte gets a "Website Ban" with the default bot user agent.
     custom_settings = {"USER_AGENT": BROWSER_DEFAULT}
 
