@@ -47,7 +47,6 @@ class CulturaFRSpider(JSONBlobSpider):
     item_attributes = {"brand": "Cultura", "brand_wikidata": "Q3007154"}
     allowed_domains = ["www.cultura.com"]
     locations_key = ["data", "stores", "items"]
-    requires_proxy = True
 
     async def start(self) -> AsyncIterator[Request]:
         yield Request(
