@@ -31,7 +31,6 @@ class CelioSpider(JSONBlobSpider):
     ]
     locations_key = "stores"
     # DataDome blocks plain requests, and Camoufox from CI IPs.
-    requires_proxy = "FR"
     custom_settings = {
         # robots.txt disallows /on/demandware.store/.
         "ROBOTSTXT_OBEY": False,
